@@ -1,0 +1,168 @@
+<div id="content">
+
+    <h1>Contact Me</h1>
+
+    <p>Please fill out the form below to contact me.</p>
+
+    <form id="contactForm">
+
+        <input type="text"
+               id="name"
+               placeholder="Enter Your Name"
+               required>
+
+        <br><br>
+
+        <input type="email"
+               id="email"
+               placeholder="Enter Your Email"
+               required>
+
+        <br><br>
+
+        <textarea id="message"
+                  placeholder="Enter Your Message"
+                  required></textarea>
+
+        <br><br>
+
+        <button type="submit" id="submitBtn">
+            Send Message
+        </button>
+
+    </form>
+
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+
+    <br><br>
+
+    <button id="homeBtn">Home</button>
+
+    <button id="aboutBtn">About Me</button>
+
+    <button id="projectsBtn">Projects</button>
+
+</div>
+
+<script>
+// Change background color
+document.body.style.backgroundColor = "purple";
+
+// Center everything
+document.getElementById("content").style.textAlign = "center";
+
+// Make textboxes bigger
+document.getElementById("name").style.width = "400px";
+document.getElementById("name").style.height = "40px";
+
+document.getElementById("email").style.width = "400px";
+document.getElementById("email").style.height = "40px";
+
+document.getElementById("message").style.width = "400px";
+document.getElementById("message").style.height = "150px";
+
+// Home button
+document.getElementById("homeBtn").style.backgroundColor = "blue";
+document.getElementById("homeBtn").style.color = "white";
+document.getElementById("homeBtn").style.padding = "10px";
+
+// About button
+document.getElementById("aboutBtn").style.backgroundColor = "green";
+document.getElementById("aboutBtn").style.color = "white";
+document.getElementById("aboutBtn").style.padding = "10px";
+
+// Projects button
+document.getElementById("projectsBtn").style.backgroundColor = "orange";
+document.getElementById("projectsBtn").style.color = "white";
+document.getElementById("projectsBtn").style.padding = "10px";
+
+// Submit button
+document.getElementById("submitBtn").style.backgroundColor = "red";
+document.getElementById("submitBtn").style.color = "white";
+document.getElementById("submitBtn").style.padding = "10px";
+
+// Button navigation
+document.getElementById("homeBtn").addEventListener("click", function() {
+    window.location.href = "/";
+});
+
+document.getElementById("aboutBtn").addEventListener("click", function() {
+    window.location.href = "/about";
+});
+
+document.getElementById("projectsBtn").addEventListener("click", function() {
+    window.location.href = "/projects";
+});
+
+// Contact form submission
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    alert(
+        "Message Submitted!\n\n" +
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nMessage: " + message
+    );
+
+    document.getElementById("contactForm").reset();
+
+    let links = document.querySelectorAll("a");
+
+links.forEach(function(link) {
+    link.style.color = "purple";
+    link.style.fontWeight = "bold";
+    link.style.textDecoration = "none";
+});
+
+});
+
+// Contact Section
+const contactSection = document.createElement("div");
+contactSection.style.marginTop = "40px";
+contactSection.style.textAlign = "center";
+
+const contactTitle = document.createElement("h2");
+contactTitle.textContent = "Contact Me";
+
+const emailLink = document.createElement("a");
+emailLink.href = "deanpilieci@gmail.com";
+emailLink.textContent = "📧 Email Me";
+emailLink.style.display = "block";
+emailLink.style.margin = "10px";
+emailLink.style.color = "#2563eb";
+emailLink.style.fontSize = "20px";
+
+const githubLink = document.createElement("a");
+githubLink.href = "https://github.com/dean77777777";
+githubLink.textContent = "💻 GitHub";
+githubLink.target = "_blank";
+githubLink.style.display = "block";
+githubLink.style.margin = "10px";
+githubLink.style.color = "#2563eb";
+githubLink.style.fontSize = "20px";
+
+const linkedinLink = document.createElement("a");
+linkedinLink.href = "https://www.linkedin.com/feed/";
+linkedinLink.textContent = "🔗 LinkedIn";
+linkedinLink.target = "_blank";
+linkedinLink.style.display = "block";
+linkedinLink.style.margin = "10px";
+linkedinLink.style.color = "#2563eb";
+linkedinLink.style.fontSize = "20px";
+
+contactSection.appendChild(contactTitle);
+contactSection.appendChild(emailLink);
+contactSection.appendChild(githubLink);
+contactSection.appendChild(linkedinLink);
+
+document.body.appendChild(contactSection);
+
+
+</script>

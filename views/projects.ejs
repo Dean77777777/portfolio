@@ -1,0 +1,125 @@
+<div id="content">
+
+
+    <h1>Here are some of my projects and I am hoping to add more projects in the future.</h1>
+
+    <button id="homeBtn">Home</button>
+    <button id="aboutBtn">About Me</button>
+    <button id="contactBtn">Contact Me</button>
+
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+</div>
+
+<script>
+
+document.body.style.backgroundColor = "pink";
+
+// Center everything
+document.getElementById("content").style.textAlign = "center";
+
+// Color the buttons
+document.getElementById("homeBtn").style.backgroundColor = "blue";
+document.getElementById("homeBtn").style.color = "white";
+
+document.getElementById("aboutBtn").style.backgroundColor = "green";
+document.getElementById("aboutBtn").style.color = "white";
+
+document.getElementById("contactBtn").style.backgroundColor = "red";
+document.getElementById("contactBtn").style.color = "white";
+
+// Make buttons bigger
+document.getElementById("homeBtn").style.padding = "10px";
+document.getElementById("aboutBtn").style.padding = "10px";
+document.getElementById("contactBtn").style.padding = "10px";
+
+// Button links
+document.getElementById("homeBtn").addEventListener("click", function() {
+    window.location.href = "/";
+});
+
+document.getElementById("aboutBtn").addEventListener("click", function() {
+    window.location.href = "/about";
+});
+
+document.getElementById("contactBtn").addEventListener("click", function() {
+    window.location.href = "/contact";
+});
+
+// Projects Header
+const projectsTitle = document.createElement("div");
+projectsTitle.textContent = "My Projects";
+
+projectsTitle.style.backgroundColor = "#2563eb";
+projectsTitle.style.color = "white";
+projectsTitle.style.width = "250px";
+projectsTitle.style.margin = "30px auto";
+projectsTitle.style.padding = "15px";
+projectsTitle.style.textAlign = "center";
+projectsTitle.style.borderRadius = "10px";
+projectsTitle.style.fontSize = "28px";
+projectsTitle.style.fontWeight = "bold";
+
+document.body.appendChild(projectsTitle);
+
+// Projects Container
+const projectsSection = document.createElement("div");
+projectsSection.style.display = "flex";
+projectsSection.style.flexWrap = "wrap";
+projectsSection.style.justifyContent = "center";
+projectsSection.style.gap = "20px";
+
+// Projects
+const projects = [
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website built with JavaScript and Express."
+    },
+    {
+        title: "snakes and ladders",
+        description: "I created a snakes and ladders game using c++ and the game is played by two players and the player who reaches the end first wins."
+    },
+    {
+        title: "bank account management system",
+        description: "I built a bank account management system using tkinter in python. So the bank account could only allow the user to depsoit a certain amount of money."
+    }
+];
+
+// Create Project Cards
+projects.forEach(project => {
+    const card = document.createElement("div");
+
+    card.style.width = "300px";
+    card.style.padding = "20px";
+    card.style.backgroundColor = "white";
+    card.style.borderRadius = "12px";
+    card.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+    card.style.textAlign = "center";
+
+    const title = document.createElement("h3");
+    title.textContent = project.title;
+    title.style.color = "#1e3a8a";
+
+    const description = document.createElement("p");
+    description.textContent = project.description;
+
+    card.appendChild(title);
+    card.appendChild(description);
+
+    // Hover Effect
+    card.addEventListener("mouseover", () => {
+        card.style.transform = "scale(1.05)";
+        card.style.backgroundColor = "#dbeafe";
+    });
+
+    card.addEventListener("mouseout", () => {
+        card.style.transform = "scale(1)";
+        card.style.backgroundColor = "white";
+    });
+
+    projectsSection.appendChild(card);
+});
+
+document.body.appendChild(projectsSection);
+
+</script>

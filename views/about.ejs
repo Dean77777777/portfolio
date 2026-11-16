@@ -1,0 +1,124 @@
+<div id="content">
+
+    <h1>About Me</h1>
+
+    <p>Hi my name is Dean Pilieci I am a second year tech management student. I am interested in learning new programming languages and I am also very interrested in learning more about excel.</p>
+
+    <br>
+    <p>In my free time I like to watch sports and play video games. 
+    </p>
+
+    <br>
+
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    <button id="homeBtn">Home</button>
+    <button id="projectsBtn">Projects</button>
+    <button id="contactBtn">Contact Me</button>
+
+</div>
+
+<script>
+
+// Center everything
+document.getElementById("content").style.textAlign = "center";
+
+// Change background color
+document.body.style.backgroundColor = "limegreen";
+
+// Color the buttons
+document.getElementById("homeBtn").style.backgroundColor = "blue";
+document.getElementById("homeBtn").style.color = "white";
+
+document.getElementById("projectsBtn").style.backgroundColor = "green";
+document.getElementById("projectsBtn").style.color = "white";
+
+document.getElementById("contactBtn").style.backgroundColor = "red";
+document.getElementById("contactBtn").style.color = "white";
+
+// Make buttons bigger
+document.getElementById("homeBtn").style.padding = "10px";
+document.getElementById("projectsBtn").style.padding = "10px";
+document.getElementById("contactBtn").style.padding = "10px";
+
+// Button links
+document.getElementById("homeBtn").addEventListener("click", function() {
+    window.location.href = "/";
+});
+
+document.getElementById("projectsBtn").addEventListener("click", function() {
+    window.location.href = "/projects";
+});
+
+document.getElementById("contactBtn").addEventListener("click", function() {
+    window.location.href = "/contact";
+});
+
+// Main Skills Box
+const skillsBox = document.createElement("div");
+skillsBox.style.width = "80%";
+skillsBox.style.margin = "30px auto";
+skillsBox.style.padding = "30px";
+skillsBox.style.backgroundColor = "white";
+skillsBox.style.border = "3px solid red";
+skillsBox.style.borderRadius = "15px";
+skillsBox.style.boxShadow = "0 6px 12px rgba(0,0,0,0.2)";
+
+// Skills Header
+const skillsHeader = document.createElement("h2");
+skillsHeader.textContent = "My Skills";
+skillsHeader.className = "text-center mb-4";
+
+skillsBox.appendChild(skillsHeader);
+
+// Skills Container
+const skillsContainer = document.createElement("div");
+skillsContainer.style.display = "flex";
+skillsContainer.style.flexWrap = "wrap";
+skillsContainer.style.justifyContent = "center";
+skillsContainer.style.gap = "20px";
+
+// Skills List
+const skills = [
+    "JavaScript",
+    "HTML/CSS",
+    "Node.js",
+    "Express.js",
+    "Python",
+    "Git & GitHub",
+    "Microsoft Excel"
+];
+
+// Create Skill Cards
+skills.forEach(skill => {
+    const card = document.createElement("div");
+
+    card.className = "card shadow text-center";
+    card.style.width = "200px";
+    card.style.padding = "20px";
+    card.style.transition = "0.3s";
+    card.style.cursor = "pointer";
+
+    const title = document.createElement("h5");
+    title.textContent = skill;
+
+    card.appendChild(title);
+
+    // Hover Effect
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "scale(1.1)";
+        card.style.backgroundColor = "blue";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "scale(1)";
+        card.style.backgroundColor = "white";
+    });
+
+    skillsContainer.appendChild(card);
+});
+
+skillsBox.appendChild(skillsContainer);
+document.body.appendChild(skillsBox);
+
+</script>

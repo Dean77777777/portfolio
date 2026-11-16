@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Portfolio</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+  <!-- Font Awesome 6 CDN for icons -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <!-- Custom stylesheet served from public/stylesheets/style.css -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+  <!-- Responsive Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">
+        <i class="fa-solid fa-terminal text-primary me-2"></i>Your Name
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link <%= title === 'Home' ? 'active fw-semibold' : '' %>" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link <%= title === 'About Me' ? 'active fw-semibold' : '' %>" href="/about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link <%= title === 'Projects' ? 'active fw-semibold' : '' %>" href="/projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link <%= title === 'Contact Me' ? 'active fw-semibold' : '' %>" href="/contact">Contact Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="flex-grow-1">

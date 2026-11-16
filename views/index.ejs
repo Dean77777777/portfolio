@@ -1,0 +1,62 @@
+<div id="content">
+
+    <h1>My Portfolio</h1>
+
+    <p>Hi my name is Dean Pilieci! and welcome to my portfolio website.</p>
+    <p>I am a passionate learner and I want to learn as much coding languages as I can.</p>
+
+    <img src="/images/dean.jpeg"
+     id="profilePic"
+     alt="Profile Picture"
+     width="300"
+     height="300">
+    <br><br><br><br>
+    <button id="aboutBtn">About Me</button>
+    <button id="projectsBtn">Projects</button>
+    <button id="contactBtn">Contact Me</button>
+<link rel="stylesheet" href="css/style.css">
+
+
+</div>
+
+<script>
+
+document.body.style.backgroundColor = "red";
+
+// Center everything
+document.getElementById("content").style.textAlign = "center";
+
+// Color the buttons
+document.getElementById("aboutBtn").style.backgroundColor = "blue";
+document.getElementById("aboutBtn").style.color = "white";
+
+document.getElementById("projectsBtn").style.backgroundColor = "green";
+document.getElementById("projectsBtn").style.color = "white";
+
+document.getElementById("contactBtn").style.backgroundColor = "red";
+document.getElementById("contactBtn").style.color = "white";
+
+// Make buttons bigger
+document.getElementById("aboutBtn").style.padding = "10px";
+document.getElementById("projectsBtn").style.padding = "10px";
+document.getElementById("contactBtn").style.padding = "10px";
+
+// Button links
+document.getElementById("aboutBtn").addEventListener("click", function() {
+    window.location.href = "/about";
+});
+
+document.getElementById("projectsBtn").addEventListener("click", function() {
+    window.location.href = "/projects";
+});
+
+document.getElementById("contactBtn").addEventListener("click", function() {
+    window.location.href = "/contact";
+
+
+
+
+
+});
+
+</script>
